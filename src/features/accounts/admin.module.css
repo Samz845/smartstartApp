@@ -1,0 +1,47 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  background: #1a73e8;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: 0.2s ease;
+}
+
+.btn:hover {
+  background: #155fc2;
+}
+
+.signUp {
+  margin-top: 1.2rem;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.signUp a {
+  margin-left: 6px;
+  color: #1a73e8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signUp a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .btn {
+    font-size: 0.95rem;
+  }
+}

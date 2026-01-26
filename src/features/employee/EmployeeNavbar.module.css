@@ -1,0 +1,137 @@
+.nav {
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid gray;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 2rem;
+  width: 100%;
+}
+
+.logOut {
+  margin-top: 6rem;
+  padding: 1rem;
+  border-top: 1px solid gray;
+}
+
+.logOut button {
+  padding: 0.75rem;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: red;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.navMenu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.navMenu a.active,
+.navMenu a:hover {
+  background-color: #f0f0f0;
+  color: royalblue;
+}
+
+.active {
+  background-color: #f0f0f0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: royalblue;
+}
+.logo {
+  padding: 0.2rem 0.8rem;
+}
+
+.nav img {
+  width: 120px;
+}
+
+/* hide elements below 1024px, show at 1024px and above */
+.lgOnly {
+  display: none;
+}
+
+/* show on small screens, hide at 1024px and above */
+.smOnly {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    grid-area: sidebar;
+    border-top: 1px solid gray;
+  }
+
+  .navMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    padding: 0;
+  }
+
+  .navMenu a:hover {
+    background-color: transparent;
+    color: royalblue;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logOut {
+    display: none;
+  }
+
+  .navMenu a {
+    flex-direction: column;
+  }
+
+  .navMenu a span {
+    font-size: 0.7rem;
+  }
+
+  .lgOnly {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lgOnly {
+    display: flex;
+  }
+
+  .smOnly {
+    display: none;
+  }
+}
+
+@media (max-width: 592px) {
+  .navMenu {
+    gap: 0;
+  }
+
+  .navMenu a span {
+    font-size: 0.45rem;
+  }
+}

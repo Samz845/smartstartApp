@@ -1,0 +1,30 @@
+.layout {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  grid-template-rows: auto 1fr;
+  background-color: rgb(249, 247, 247);
+  height: 100vh;
+  color: #000;
+}
+
+.main {
+  overflow-y: scroll;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar";
+  }
+
+  .main {
+    grid-area: main;
+  }
+}

@@ -1,0 +1,203 @@
+/* Center the whole container in the viewport */
+.container {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f5f7fb;
+  overflow-y: hidden;
+}
+
+.container > .loginPanel,
+.container > .image_panel {
+  box-shadow: 0 8px 30px rgba(11, 22, 40, 0.06);
+  background: white;
+  overflow: hidden;
+}
+
+.loginPanel {
+  flex: 1;
+  padding: 6rem 6rem;
+  gap: 16px;
+  color: #000;
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.logo img {
+  width: 50%;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.image_panel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.loginPanel h1 {
+  font-size: 35px;
+  color: #000;
+  text-align: center;
+  font-weight: 500;
+}
+
+.loginPanel .subtitle {
+  margin: 0 -16px 18px 0;
+  color: #000;
+  text-align: center;
+}
+
+.googleLogin {
+  width: 100%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  margin-bottom: 12px;
+  border-radius: 5px;
+}
+
+.divider_div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+}
+
+.divider_div .divider {
+  width: 140px;
+  height: 2px;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.field label {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.field input {
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid grey;
+  color: #000;
+}
+
+.visibleBtn {
+  position: absolute;
+  left: 88%;
+  top: 60%;
+  cursor: pointer;
+}
+
+.field input:focus {
+  outline: none;
+}
+
+.form_footer {
+  display: flex;
+  margin-top: -15px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.keep {
+  font-size: 15px;
+}
+
+.forgot_password,
+.signUp {
+  color: royalblue;
+  text-decoration: none;
+}
+
+.logBtn {
+  width: 100%;
+  background-color: royalblue;
+  margin-top: 20px;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.5s;
+  font-weight: 700;
+  color: #fff;
+}
+
+.logBtn:hover {
+  background-color: lightblue;
+}
+
+.sign_up_prompt {
+  text-align: center;
+}
+/* Responsive: stack and scale on smaller screens */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .loginPanel {
+    width: 100%;
+    max-width: 720px;
+    padding: 2rem;
+  }
+
+  .image_panel {
+    display: none;
+  }
+
+  .field input {
+    width: 100%;
+  }
+
+  .logo {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .login-panel {
+    padding: 20px;
+  }
+
+  .image-panel {
+    display: none;
+  }
+}

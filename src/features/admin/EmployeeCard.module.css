@@ -1,0 +1,116 @@
+.table_body {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.table_body p {
+  margin-bottom: 1.5rem;
+  font-size: 15px;
+  color: #534a4a;
+}
+
+.not_started {
+  background-color: rgba(207, 4, 4, 0.3);
+  color: rgb(207, 4, 4);
+}
+
+.inprogress {
+  background-color: rgba(250, 211, 14, 0.3);
+  color: rgba(230, 169, 57);
+}
+
+.status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.red {
+  color: rgb(207, 4, 4);
+}
+
+.yellow {
+  color: rgb(230, 169, 57);
+}
+
+.progress {
+  width: 150px;
+  height: 12px;
+  appearance: none;
+}
+
+.progress::-webkit-progress-bar {
+  background-color: rgba(107, 107, 239, 0.335);
+  border-radius: 10px;
+  color: blue;
+}
+
+.progress::-webkit-progress-value {
+  background-color: #1e88e5;
+  border-radius: 10px;
+}
+
+.workRate {
+  margin-left: -30px;
+  display: flex;
+  gap: 0.4rem;
+}
+.workRate .progress {
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 768px) {
+  .table_body {
+    gap: 0.2rem;
+  }
+
+  .table_body p {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+  }
+
+  .workRate .progress {
+    margin-top: 0.2rem;
+  }
+
+  .workRate span {
+    font-size: 0.6rem;
+  }
+
+  .status {
+    padding: 6px 8px;
+    gap: 0.2rem;
+  }
+
+  .status span {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 668px) {
+  .progress {
+    width: 80px;
+  }
+
+  .table_body p {
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  .workRate .progress {
+    margin-top: 0;
+  }
+
+  .status {
+    padding: 2px 4px;
+    justify-content: center;
+  }
+  .workRate {
+    margin-left: -15px;
+  }
+}

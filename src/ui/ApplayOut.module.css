@@ -1,0 +1,30 @@
+:root {
+  --gap: 0;
+  --bg: #ffffff;
+  --surface: #f7f7fb;
+  --accent: #0b74de;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: "header" "main" "footer";
+  min-height: 100dvh;
+  background: var(--bg);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main {
+  width: 100%;
+  color: black;
+  overflow-x: hidden;
+}
+
+.footer {
+  background: var(--surface);
+  text-align: center;
+  font-size: 0.95rem;
+  color: #444;
+}

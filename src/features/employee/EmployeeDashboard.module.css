@@ -1,0 +1,307 @@
+.welcome_banner {
+  margin-bottom: 2rem;
+}
+
+.welcome_banner h2 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progress_details h3 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.progress_details p {
+  font-size: 1rem;
+  columns: gray;
+}
+
+.progress_widget {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(174, 172, 172, 0.5);
+  padding: 1.5rem 1rem;
+  border-radius: 10px;
+}
+
+.progress_ring {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* The ring with 4 blue chunks */
+  background: conic-gradient(
+    #2e7cc3 0deg 30deg,
+    #eef0f7 30deg 90deg,
+    #2e7cc3 90deg 120deg,
+    #eef0f7 120deg 210deg,
+    #2e7cc3 210deg 240deg,
+    #eef0f7 240deg 300deg,
+    #2e7cc3 300deg 330deg,
+    #eef0f7 330deg 360deg
+  );
+}
+
+.progress_inner {
+  width: 130px;
+  height: 130px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-inner p {
+  color: #2e7cc3;
+  font-size: 26px;
+  margin: 0;
+}
+
+.progress-inner span {
+  color: #666;
+  font-size: 16px;
+}
+
+.sessions_grid {
+  display: grid;
+  grid-template-columns: 45rem 18rem;
+  gap: 2rem;
+}
+
+.info_container {
+  border: 1px solid rgba(174, 172, 172, 0.5);
+  padding: 2rem 2rem;
+  border-radius: 16px;
+}
+
+.info_container h4 {
+  margin-bottom: 1.5rem;
+}
+h5 {
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.details_section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.detail_row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  align-items: center;
+}
+
+.label,
+.employee {
+  font-size: 0.7rem;
+}
+
+.support_list h6,
+.manager_name {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.support_list p,
+.manager_email {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.upcoming_sessions {
+  width: 100%;
+  border: 1px solid rgba(174, 172, 172, 0.5);
+  padding: 1rem 2rem;
+  border-radius: 10px;
+}
+
+.upcoming_sessions h4 {
+  margin-bottom: 1.5rem;
+}
+
+.session_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.session {
+  width: 100%;
+  background-color: rgba(0, 100, 250, 0.1);
+  margin-bottom: 1rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10px;
+}
+
+.session p {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.session span {
+  font-size: 12px;
+  color: gray;
+}
+
+.cards_grid {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.action_card {
+  background-color: #fff;
+  border: 1px solid rgba(174, 172, 172, 0.5);
+  padding: 2rem 2rem;
+  border-radius: 10px;
+}
+.card_text {
+  margin-bottom: 1rem;
+}
+
+.card_text p {
+  font-size: 14px;
+  color: gray;
+}
+
+.primary_btn,
+.secondary_btn {
+  width: 100%;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+}
+
+.primary_btn {
+  background-color: royalblue;
+  border: none;
+  color: #fff;
+}
+
+.secondary_btn {
+  background-color: transparent;
+  color: royalblue;
+  border: 1px solid rgba(174, 172, 172, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .progress_ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+  }
+
+  .progress_inner {
+    width: 120px;
+    height: 120px;
+  }
+
+  .progress_inner p {
+    font-size: 22px;
+  }
+
+  .progress_inner span {
+    font-size: 14px;
+  }
+
+  .progress_details h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sessions_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .details_section {
+    grid-template-columns: 1fr;
+  }
+
+  .cards_grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+    gap: 2rem;
+  }
+
+  .label,
+  .employee {
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+
+  h5 {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .detail_row {
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .support_list h6,
+  .manager_name {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .support_list p,
+  .manager_email {
+    font-size: 0.7rem;
+  }
+
+  .progress_inner p {
+    color: #2e7cc3;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .progress_inner span {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 563px) {
+  .progress_ring {
+    width: 120px;
+    height: 95px;
+    border-radius: 50%;
+  }
+
+  .progress_inner {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress_inner span {
+    font-size: 12px;
+  }
+
+  .progress_details h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .progress_details p {
+    font-size: 0.7rem;
+  }
+}

@@ -1,0 +1,102 @@
+.nav {
+  grid-row: 1/-1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid gray;
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.logOut {
+  margin-top: 4rem;
+  padding: 1rem;
+  border-top: 1px solid gray;
+}
+
+.logOut button {
+  padding: 0.75rem;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: red;
+  transition: background-color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: background-color 0.3s;
+}
+
+.navLinks a:hover {
+  background-color: #f0f0f0;
+}
+
+.active {
+  background-color: #f0f0f0;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav img {
+  width: 120px;
+  margin: 4px 0 0 10px;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    grid-area: sidebar;
+    border-top: 1px solid gray;
+  }
+
+  .navLinks a {
+    flex-direction: column;
+    padding: 0 0.5rem;
+  }
+
+  .navLinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    width: 100%;
+  }
+
+  .navLinks a span {
+    font-size: 0.75rem;
+  }
+  .home_link {
+    display: none;
+  }
+
+  .logOut {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .navLinks {
+    gap: 0.2rem;
+  }
+
+  .navLinks a span {
+    font-size: 0.5rem;
+  }
+}
