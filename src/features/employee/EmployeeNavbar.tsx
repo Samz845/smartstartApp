@@ -3,6 +3,7 @@ import styles from "./EmployeeNavbar.module.css";
 import { FaCheckSquare, FaHome, FaSignOutAlt, FaUpload } from "react-icons/fa";
 import { FiCalendar, FiTrendingUp, FiUpload, FiUser } from "react-icons/fi";
 import { useLogOut } from "../accounts/useLogOut";
+import Wrapper from "../../ui/Wrapper";
 function EmployeeNavbar() {
   const { logOut, isLoggingOut } = useLogOut();
   return (
@@ -43,30 +44,34 @@ function EmployeeNavbar() {
         </NavLink>
 
         <NavLink
-          to=""
+          to="/progress"
           className={({ isActive }) => (isActive ? styles.active : "")}
         >
           <FiTrendingUp />
           <span>Progress </span>
         </NavLink>
 
-        <NavLink
-          to=""
-          className={({ isActive }) =>
-            `${isActive ? styles.active + " " : ""}${styles.lgOnly}`
-          }
-        >
-          <FiCalendar />
-          <span>Events</span>
-        </NavLink>
+        <Wrapper>
+          <NavLink
+            to=""
+            className={({ isActive }) => (isActive ? styles.active : "")}
+          >
+            <FiCalendar />
+            <span>Events</span>
+          </NavLink>
+        </Wrapper>
 
-        <NavLink
-          to=""
-          className={({ isActive }) => `${isActive ? styles.active + " " : ""}`}
-        >
-          <FiUpload />
-          <span>Documents</span>
-        </NavLink>
+        <Wrapper>
+          <NavLink
+            to=""
+            className={({ isActive }) =>
+              `${isActive ? styles.active + " " : ""}`
+            }
+          >
+            <FiUpload />
+            <span>Documents</span>
+          </NavLink>
+        </Wrapper>
 
         <NavLink
           to=""
@@ -80,7 +85,7 @@ function EmployeeNavbar() {
       </nav>
 
       <div className={styles.logOut}>
-        <button onClick={logOut}>
+        <button onClick={() => logOut()}>
           <FaSignOutAlt />
           {isLoggingOut ? "please wait" : "Log Out"}
         </button>

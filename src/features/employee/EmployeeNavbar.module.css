@@ -50,7 +50,7 @@
 
 .navMenu a.active,
 .navMenu a:hover {
-  background-color: #f0f0f0;
+  background-color: transparent;
   color: royalblue;
 }
 
@@ -105,10 +105,11 @@
 
   .navMenu a {
     flex-direction: column;
+    gap: 0.2rem;
   }
 
   .navMenu a span {
-    font-size: 0.7rem;
+    font-size: 1rem;
   }
 
   .lgOnly {
@@ -132,6 +133,18 @@
   }
 
   .navMenu a span {
-    font-size: 0.45rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .navMenu a span {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .navMenu a span {
+    font-size: 0.6rem;
   }
 }

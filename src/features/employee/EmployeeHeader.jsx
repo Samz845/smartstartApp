@@ -26,7 +26,7 @@ function EmployeeHeader() {
         <div className="profile-area">
           {!isLoading && (
             <img
-              src={user.profileImage || "picture01.png"}
+              src={user?.profileImage || "picture01.png"}
               alt="Profile Picture"
               className="profile-pic"
             />

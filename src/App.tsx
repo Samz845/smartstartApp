@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import ApplayOut from "./ui/ApplayOut";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -12,17 +12,21 @@ import { Toaster } from "react-hot-toast";
 import AuthorizedLayout from "./ui/AuthorizedLayout";
 import AdminHome from "./pages/AdminHome";
 import ProtectedRoute from "./ui/ProtectedRoute";
-import EmployeeHome from "./pages/EmployeeHome";
+import EmployeeHome from "./pages/EmployeePages/EmployeeHome";
 import UnAuthorized from "./ui/UnAuthorized";
 import Checklist from "./pages/EmployeePages/Checklist";
 import Uploads from "./pages/EmployeePages/Uploads";
+import Progress from "./pages/EmployeePages/Progress";
+import { AnimatePresence } from "framer-motion";
+
+const queryClient = new QueryClient();
 
 function App() {
-  const queryClient = new QueryClient();
+  const location = useLocation();
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
           <Route path="home" element={<Home />} />
           <Route path="signup" element={<SignupPage />} />
           <Route path="login" element={<LoginPage />} />
@@ -68,6 +72,15 @@ function App() {
             />
 
             <Route
+              path="/progress"
+              element={
+                <ProtectedRoute allowedRoles={["employee"]}>
+                  <Progress />
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
               path="/employee/dashboard"
               element={
                 <ProtectedRoute allowedRoles={["employee"]}>
@@ -77,7 +90,7 @@ function App() {
             />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </AnimatePresence>
       <Toaster
         position="top-center"
         gutter={12}

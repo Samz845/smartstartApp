@@ -2,8 +2,10 @@ import { FaCheckSquare } from "react-icons/fa";
 import UserAvatar from "../../ui/UserAvatar";
 import styles from "./EmployeeDashboard.module.css";
 import { FiList } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 function EmployeeDashboard() {
+  const navigate = useNavigate();
   return (
     <>
       <section className={styles.dashboard_content}>
@@ -116,7 +118,12 @@ function EmployeeDashboard() {
             <h3>View Checklist</h3>
             <p>See your onboarding tasks and track your progress</p>
           </div>
-          <button className={styles.primary_btn}>Open Checklist</button>
+          <button
+            className={styles.primary_btn}
+            onClick={() => navigate("/checklist")}
+          >
+            Open Checklist
+          </button>
         </div>
 
         <div className={styles.action_card}>
@@ -126,7 +133,7 @@ function EmployeeDashboard() {
             <p>Submit your required documents securely</p>
           </div>
           <button
-            href="employee-documents.html"
+            onClick={() => navigate("/uploads")}
             className={styles.secondary_btn}
           >
             Upload Files

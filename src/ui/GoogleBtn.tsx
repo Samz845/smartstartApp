@@ -1,22 +1,20 @@
-import { GoogleLogin } from "@react-oauth/google";
+import { GoogleLogin, type CredentialResponse } from "@react-oauth/google";
 import { useQueryClient } from "@tanstack/react-query";
 import { jwtDecode } from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 function GoogleBtn() {
   const queryClient = useQueryClient();
   const navigate = useNavigate();
 
-  const googleAuth = async (response) => {
+  const googleAuth = async (response: CredentialResponse) => {
     try {
       const googleToken = response.credential;
-
       if (!response.credential) {
         throw new Error("No Google credential returned");
       }
 
       const googleUser = jwtDecode(googleToken);
-      console.log(googleUser);
 
       const res = await fetch(
         "https://capstone-hr-backend.onrender.com/api/users/google",
@@ -28,7 +26,7 @@ function GoogleBtn() {
           body: JSON.stringify({
             idToken: googleToken,
           }),
-        }
+        },
       );
 
       if (!res.ok) throw new Error("Google auth failed");
@@ -49,9 +47,11 @@ function GoogleBtn() {
 
   return (
     <GoogleLogin
-      width="300"
       onSuccess={googleAuth}
       onError={() => console.error("Google Login Failed")}
+      theme="outline"
+      size="large"
+      text="signin_with"
     />
   );
 }

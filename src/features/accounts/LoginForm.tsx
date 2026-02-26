@@ -5,11 +5,11 @@ import { useLogin } from "./useLogin";
 import GoogleBtn from "../../ui/GoogleBtn";
 
 function LoginForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const { logIn, isLoggingIn } = useLogin();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email && !password) return null;
     logIn({ email, password });
@@ -71,7 +71,7 @@ function LoginForm() {
                 Keep me logged in
               </label>
             </div>
-            <Link href="#" className={styles.forgot_password}>
+            <Link to="/" className={styles.forgot_password}>
               Forgot password?
             </Link>
           </div>

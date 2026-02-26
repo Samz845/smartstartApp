@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import styles from "./header.module.css";
-import { FiMenu } from "react-icons/fi";
 import { FaBars } from "react-icons/fa";
 
 function Header() {

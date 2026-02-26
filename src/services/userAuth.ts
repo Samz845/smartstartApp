@@ -1,6 +1,8 @@
+import type { userLoginProp, userSignUpProp } from "../types/models";
+import type { user } from "../types/models";
 const BASE_URL = "https://capstone-hr-backend.onrender.com/api/users";
 
-export const signUp = async (userData) => {
+export const signUp = async (userData: userSignUpProp): Promise<user> => {
   const res = await fetch(`${BASE_URL}/register`, {
     method: "POST",
     headers: { "content-type": "application/json" },
@@ -13,7 +15,7 @@ export const signUp = async (userData) => {
   return data;
 };
 
-export const loginUser = async (user) => {
+export const loginUser = async (user: userLoginProp): Promise<user> => {
   const res = await fetch(`${BASE_URL}/login`, {
     method: "POST",
     headers: {
@@ -28,7 +30,7 @@ export const loginUser = async (user) => {
   return data;
 };
 
-export const getCurrentUser = async () => {
+export const getCurrentUser = async (): Promise<user> => {
   const token = localStorage.getItem("token");
   if (!token) return null;
 

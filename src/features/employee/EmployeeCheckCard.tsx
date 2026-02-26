@@ -1,6 +1,14 @@
 import { FaUpload } from "react-icons/fa";
+import type { cardProps } from "../../types";
 
-const EmployeeCheckCard = ({ first, second, status, border, bg, color }) => {
+const EmployeeCheckCard = ({
+  first,
+  second,
+  status,
+  border,
+  bg,
+  color,
+}: cardProps) => {
   return (
     <div
       className={`border-2 ${border} border-l-8 rounded-lg p-2 mb-6 flex flex-col gap-3 bg-white`}
