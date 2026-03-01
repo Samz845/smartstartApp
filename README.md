@@ -15,6 +15,8 @@ Smart Start is a user onboarding web application designed to guide new users thr
 ## 🛠 Tech Stack
 
 - React
+- TypeScript
+- JavaScript
 - Tailwind CSS
 - React hook form
 - React Query
